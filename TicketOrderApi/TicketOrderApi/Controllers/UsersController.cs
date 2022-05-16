@@ -5,22 +5,22 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AuthenticationPlugin;
-using CinemaApi.Data;
-using CinemaApi.Models;
+using TicketOrderApi.Data;
+using TicketOrderApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
-namespace CinemaApi.Controllers
+namespace TicketOrderApi.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private CinemaDbContext _dbContext;
+        private TicketOrderApiDbContext _dbContext;
         private IConfiguration _configuration;
         private readonly AuthService _auth;
-        public UsersController(CinemaDbContext dbContext, IConfiguration configuration)
+        public UsersController(TicketOrderApiDbContext dbContext, IConfiguration configuration)
         {
             _configuration = configuration;
             _auth = new AuthService(_configuration);

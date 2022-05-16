@@ -1,15 +1,15 @@
-﻿using CinemaApi.Models;
+﻿using TicketOrderApi.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CinemaApi.Data
+namespace TicketOrderApi.Data
 {
-    public class CinemaDbContext : DbContext
+    public class TicketOrderApiDbContext : DbContext
     {
-        public CinemaDbContext(DbContextOptions<CinemaDbContext> options) : base(options)
+        public TicketOrderApiDbContext(DbContextOptions<TicketOrderApiDbContext> options) : base(options)
         {
 
         }

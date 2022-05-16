@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using CinemaApi.Data;
-using CinemaApi.Models;
+using TicketOrderApi.Data;
+using TicketOrderApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CinemaApi.Controllers
+namespace TicketOrderApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class MoviesController : ControllerBase
     {
-        private CinemaDbContext _dbContext;
-        public MoviesController(CinemaDbContext dbContext)
+        private TicketOrderApiDbContext _dbContext;
+        public MoviesController(TicketOrderApiDbContext dbContext)
         {
             _dbContext = dbContext;
         }

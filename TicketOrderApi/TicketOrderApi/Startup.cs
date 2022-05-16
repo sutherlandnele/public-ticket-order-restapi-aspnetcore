@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CinemaApi.Data;
+using TicketOrderApi.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -16,7 +16,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
 
-namespace CinemaApi
+namespace TicketOrderApi
 {
     public class Startup
     {
@@ -32,7 +32,7 @@ namespace CinemaApi
         {
             services.AddControllers();
             services.AddMvc().AddXmlSerializerFormatters();
-            services.AddDbContext<CinemaDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("CinemaDbConnection")));
+            services.AddDbContext<TicketOrderApiDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("TicketOrderApiDbConnection")));
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
               .AddJwtBearer(options =>
               {
