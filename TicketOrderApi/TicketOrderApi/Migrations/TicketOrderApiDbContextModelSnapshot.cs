@@ -19,7 +19,7 @@ namespace TicketOrderApi.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("CinemaApi.Models.Movie", b =>
+            modelBuilder.Entity("TicketOrderApi.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -64,7 +64,7 @@ namespace TicketOrderApi.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("CinemaApi.Models.Reservation", b =>
+            modelBuilder.Entity("TicketOrderApi.Models.Reservation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -98,7 +98,7 @@ namespace TicketOrderApi.Migrations
                     b.ToTable("Reservations");
                 });
 
-            modelBuilder.Entity("CinemaApi.Models.User", b =>
+            modelBuilder.Entity("TicketOrderApi.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -122,15 +122,15 @@ namespace TicketOrderApi.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("CinemaApi.Models.Reservation", b =>
+            modelBuilder.Entity("TicketOrderApi.Models.Reservation", b =>
                 {
-                    b.HasOne("CinemaApi.Models.Movie", null)
+                    b.HasOne("TicketOrderApi.Models.Movie", null)
                         .WithMany("Reservations")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CinemaApi.Models.User", null)
+                    b.HasOne("TicketOrderApi.Models.User", null)
                         .WithMany("Reservations")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
